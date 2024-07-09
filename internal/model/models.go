@@ -6,7 +6,7 @@ import (
 
 type User struct{
 	UserId    uint 	   `gorm:"primaryKey"`
-	Username string    
+	Username string    `gorm:"uniqueIndex"`
 	Password string    `json:"-"`
 	Orders	[]Order    `gorm:"foreignKey:UserId;constraint:OnDelete:CASCADE"`
 }
